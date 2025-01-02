@@ -3,7 +3,7 @@ This repository contains the python implementation for the paper "Advancing UAV-
 
 ## Dataset
 
-**Note**: The `data/` file does not have to be within your project, you can put it somewhere you want. Please remembet to fill the correct data path in `config/tcrnn.yaml`.
+**Note**: The `data/` file does not have to be within your project, you can put it somewhere you want.
 
 ## Get Started
 ### Dependencies
