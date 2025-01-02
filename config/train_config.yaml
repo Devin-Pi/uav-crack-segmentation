@@ -1,0 +1,26 @@
+# USUAL SETTING
+batch_size: 12
+test_batch_size: 1
+num_workers: 8
+input_shape: [475, 475]
+n_classes: 2
+pretrained: True
+# OPTIMIZER:
+optimizer: adam
+max_lr: 0.0001
+min_lr: 0.000001
+momentum: 0.9
+weight_decay: 0
+lr_decay_type: 'cos'
+
+# DDP SETTING
+cuda: True
+distributed: True
+sync_bn: True
+# VARIOUS PATHS
+save_dir: "/unet-semantic/weights/"
+data_path: "/unet-semantic/data/DeepCrack500/" #"/unet-semantic/data/crack_seg/" #'/unet-semantic/data/VOCdevkit/VOC2012/'
+# data_path: "/unet-semantic/data/crack_500_voc/"
+model_path: "/unet-semantic/check_point/last.ckpt"
+save_period: 20
+result_dir: /unet-semantic/result/

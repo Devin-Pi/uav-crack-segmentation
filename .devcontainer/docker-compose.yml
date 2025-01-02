@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  unet-semantic:
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    image: rdpi/dl
+    runtime: nvidia
+    container_name: crack_segmentation
+    volumes:
+      # Forwards the local Docker socket to the container.
+      - /var/run/docker.sock:/var/run/docker-host.sock
+      # Update this to wherever you want VS Code to mount the folder of your project
+      - ../:/unet-semantic:cached
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - /run/udev:/run/udev
+    # Overrides default command so things don't shut down after the process ends.
+    # entrypoint: /usr/local/share/docker-init.sh
+    environment:
+      - DISPLAY=$DISPLAY
+    shm_size: 32G
+    command: sleep infinity
+    # Uncomment the next four lines if you will use a ptrace-based debuggers like C++, Go, and Rust.
+    # cap_add:
+    #  - SYS_PTRACE
+    # security_opt:
+    #   - seccomp:unconfined
+
+    # Use "forwardPorts" in **devcontainer.json** to forward an app port locally.
+    # (Adding the "ports" property to this file will not forward from a Codespace.)
