@@ -34,8 +34,7 @@ print('网络设置完毕 ：成功载入了训练完毕的权重。')
 
 
 #img_path = "/unet-semantic/images/processing/flight1_image_results/img/ppm_690_737579624.jpg" # you can change the path whatever you want
-#img_path = "experimental_images/640/crack_8/rgb_8.jpg"
-#img_path = "experimental_images/rgb_1.jpg"
+
 img_path = "/unet-semantic/TestImage/crack1_1.jpg"
 # img_path = "data/crack_seg/JPEGImages/0777.jpg"
 # 1.显示原有图像
